@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.29/system.js"></script>
+    <script>
+
+      System.config({
+        defaultJSExtensions: true,
+        map: {
+          'fbjs': 'node_modules/fbjs',
+          'react': 'node_modules/react',
+          'react-dom': 'node_modules/react-dom/',
+          'react-data-grid': 'node_modules/react-data-grid/dist/'
+        },
+        packages: {
+          'react': { main: 'react' },
+          'react-dom': { main: 'index' },
+          'react-data-grid': { main: 'react-data-grid' },
+        }
+      });
+
+      System.import('index')
+      .catch(console.error.bind(console));
+    </script>
+</body>
+</html>
